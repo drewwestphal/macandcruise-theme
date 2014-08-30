@@ -23,7 +23,7 @@
 						<h2><?php bloginfo( 'description' ); ?></h2>
 						<h3>August 3-7, 2015</h3>
 					</div>
-					<p>Sailing from Miami to Grand Bahama Island, Nassau and Great Stirrup Cay on Norwegian Cruise Lines&rsquo; <span class="title">Norwegian Sky</span></p>
+					<p>Sailing from Miami to Grand Bahama Island, Nassau and Great Stirrup Cay aboard Norwegian Cruise Lines&rsquo; <span class="title">Norwegian Sky</span></p>
 					<h4>Join the mailing list to be the first to get complete details!</h4>
 					<?php if( function_exists( 'mc4wp_form' ) ) {
 					    mc4wp_form();
@@ -38,7 +38,7 @@
 						<li>and more!</li>
 					</ul>
 					<p id="brought-by">
-					From the people behind JoCo Cruise Crazy & Spare the Rock, Spoil the Child
+					From the people who brought you JoCo Cruise Crazy & Spare the Rock, Spoil the Child
 					</p>
 					<div class="social">
 						<a href="https://twitter.com/macandcruise"><img src="/wp-content/themes/MacAndCruise/img/twitter.png"></a>
