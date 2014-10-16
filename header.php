@@ -10,10 +10,30 @@
 <!-- jquery & bootstrap js -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<!-- custom css -->
-<link rel="stylesheet" type="text/css" href="/wp-content/themes/MacAndCruise/css/custom.css" />
+<!-- custom css 
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/MacAndCruise/css/custom.css" />-->
 <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+
+<!--development-->
+<link rel="stylesheet/less" type="text/css" href="/wp-content/themes/MacAndCruise/style.less" />
+<script>
+  less = {
+    env: "development",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    rootpath: ":em.local/wp-content/themes/MacAndCruise/js"
+  };
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+<script>less.watch();</script>
+<!--development-->
+
 
 <?php wp_head(); ?>
 </head>
