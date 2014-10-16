@@ -38,8 +38,8 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="wrapper" class="container-fluid hfeed">
-	<div class="container-fluid col-md-8">
+<div id="wrapper" class="hfeed">
+	<div class="container-fluid">
 		<div class="row">
 			<header id="header" role="banner" class="col-md-offset-1">
 				<nav class="navbar navbar-default" role="navigation">
@@ -52,7 +52,7 @@
 						    <span class="icon-bar"></span>
 						    <span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="#">Brand</a>
+						  <a class="navbar-brand" href="/"><h1>Macaroni <span class="orange-text">&</span> Cruise</h1></a>
 						</div>
 						
 						<!-- Collect the nav links, forms, and other content for toggling -->
