@@ -7,10 +7,12 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
-register_nav_menus(
-array( 'main-menu' => __( 'Main Menu', 'blankslate' ) )
-);
+
 }
+function mac_register_theme_menu() {
+    register_nav_menu( 'primary', 'Main Nav' );
+}
+add_action( 'init', 'mac_register_theme_menu' );
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts()
 {

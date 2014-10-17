@@ -65,12 +65,14 @@ table {
 //colors
 @orange: rgb(255,159,2);
 @blue: rgb(98,128,181);
+@gray: rgb(214,214,214);
 
 html{
 	width:100%;
 	height:100%;
 	padding:0;
 	margin:0;
+	margin-top:0;
 }
 body{
 	color:white;
@@ -78,9 +80,13 @@ body{
 	height:100%;
 	font-family: 'Arvo', sans-serif;
 	letter-spacing: .5px;
+	background:@blue;
 }
 
 .orange-text{
+	color:@orange;
+}
+a:hover{
 	color:@orange;
 }
 
@@ -98,10 +104,24 @@ body{
 	border:none;
 	background-color:#FFF;
 }
+.navbar-nav{
+	float: none;
+	text-align: center;
+	li{
+		float: none;
+		a{
+			color:@blue;
+		}
+		@media screen and (min-width:768px){
+			display:inline-block;
+
+		}
+	}
+}
 .navbar-toggle{
 	float:left;
 	margin-top:7px;
-	margin-left: 15px;
+	margin-left: 5px;
 	border:none;
 }
 .navbar-brand{
@@ -113,6 +133,30 @@ body{
 		font-size: 20px;
 		color:@blue;
 	}
+	@media screen and (min-width:768px){
+		display:none;
+	}
+}
+.nav>li>a{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.navbar-default .navbar-nav>li>a{
+	color:@blue;
+	text-align: left;
+	@media screen and (min-width:768px){
+		text-align: center;
+	}
+}
+.navbar-default .navbar-nav > li > a.orange-text{
+	color:@orange;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+	color:@gray;
+	background-color: transparent;
+}
+.navbar-default .navbar-nav>.active>a{
+	
 }
 
 .navbar-default .navbar-toggle .icon-bar{

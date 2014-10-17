@@ -41,7 +41,7 @@
 <div id="wrapper" class="hfeed">
 	<div class="container-fluid">
 		<div class="row">
-			<header id="header" role="banner" class="col-md-offset-1">
+			<header id="header" role="banner" class="">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -58,8 +58,12 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						  <ul class="nav navbar-nav">
-						    <!--<li class="active"><a href="#">Link</a></li>
-						    <li><a href="#">Link</a></li>-->
+						  	<!--<?php wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) ); ?>-->
+						    <li class="active"><a href="#">Link</a></li>
+						    <li><a href="#">Link</a></li>
+						    <li><a href="#" class="orange-text">Link</a></li>
+						    <li><a href="#">Link</a></li>
+						    <li><a href="#">Link</a></li>
 						  </ul>
 						  <!--<ul class="nav navbar-nav navbar-right">
 						    <li><a href="#">Link</a></li>
