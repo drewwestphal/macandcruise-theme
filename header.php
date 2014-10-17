@@ -61,7 +61,7 @@
 						  	<!--<?php wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) ); ?>-->
 						    <li class="active"><a href="#">Link</a></li>
 						    <li><a href="#">Link</a></li>
-						    <li><a href="#" class="orange-text">Link</a></li>
+						    <li><a href="#" class="orange-text"><span class="glyphicon glyphicon-calendar"></span>Link</a></li>
 						    <li><a href="#">Link</a></li>
 						    <li><a href="#">Link</a></li>
 						  </ul>

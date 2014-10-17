@@ -151,12 +151,16 @@ a:hover{
 .navbar-default .navbar-nav > li > a.orange-text{
 	color:@orange;
 }
+
+.navbar-default .navbar-nav > li > a.orange-text span{
+	padding-right: 10px;
+	@media screen and (max-width:767px){
+		display:none;
+	}
+}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
 	color:@gray;
 	background-color: transparent;
-}
-.navbar-default .navbar-nav>.active>a{
-	
 }
 
 .navbar-default .navbar-toggle .icon-bar{
