@@ -722,6 +722,10 @@ CONTACT
 		padding:15px;
 		margin: 15px 0;
 	}
+	input:focus,textarea:focus{
+		border:1px solid @orange;
+		outline:none;
+	}
 	textarea{
 		height:128px
 	}
@@ -742,5 +746,19 @@ CONTACT
 	}
 	textarea:-ms-input-placeholder {  
 	   color: @white;  
+	}
+	button{
+		width:90px;
+		height:40px;
+		background:@white;
+		color:@orange;
+		border:0;
+		border-radius: 0px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 15px;
 	}
 }
