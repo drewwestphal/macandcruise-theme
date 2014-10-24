@@ -167,40 +167,61 @@
 	<section id="faq">
 		<h1>FAQS</h1>
 		<?php 
-					$args = array(
-						'post_type' => 'faq',
-						'orderby'	=> 'ID',
-						'order'		=> 'ASC'
-					);
-					$l=0;
-					$faq_query = new WP_Query( $args );
-					if ( $faq_query->have_posts() ) {
-						$faq_count = $faq_query->post_count;
-						?>
-						
-						<div class="carousel visible-*-block" id="faq-carousel-small">
-							<span class="glyphicon glyphicon-arrow-left"></span>
-							<?php
-								for ($l=0;$l<$faq_count;$l++){ ?>		
-									<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-							<?php
-								}
-							?>	
-							<span class="glyphicon glyphicon-arrow-right"></span>
-						</div>
-						<div class="carousel hidden-xs" id="faq-carousel-wide">
-							<span class="glyphicon glyphicon-arrow-left"></span>
-							<?php
-								for ($l=0;$l<$faq_count;$l++){ ?>		
-									<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-							<?php
-								}
-							?>	
-							<span class="glyphicon glyphicon-arrow-right"></span>
-						</div>
-						
-						<?php
+		$args = array(
+			'post_type' => 'faq',
+			'orderby'	=> 'ID',
+			'order'		=> 'ASC'
+		);
+		$l=0;
+		$faq_query = new WP_Query( $args );
+		if ( $faq_query->have_posts() ) {
+			$faq_count = $faq_query->post_count;
+			?>
+			
+			<div class="carousel visible-*-block" id="faq-carousel-small">
+				<span class="glyphicon glyphicon-arrow-left"></span>
+				<?php
+					for ($l=0;$l<$faq_count;$l++){ ?>		
+						<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+				<?php
 					}
+				?>	
+				<span class="glyphicon glyphicon-arrow-right"></span>
+			</div>
+			<div class="carousel hidden-xs" id="faq-carousel-wide">
+				<span class="glyphicon glyphicon-arrow-left"></span>
+				<?php
+					for ($l=0;$l<$faq_count;$l++){ ?>		
+						<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+				<?php
+					}
+				?>	
+				<span class="glyphicon glyphicon-arrow-right"></span>
+			</div>
+			<div id="faq-overflow">
+				<?php
+					while ( $faq_query->have_posts() ) {
+						$faq_query->the_post();
+						?>
+						<div class="faq-item-container" id="item-<?php echo $l; ?>">
+							<div class="faq-item-question">
+								<h2><?php the_title(); ?></h2>
+							</div>
+							<?php if ($post->post_excerpt) {?>
+							<div class="faq-item-answer">
+									<?php the_excerpt(); ?>
+							</div>
+							<? }; ?>
+						</div>
+						<?php
+						$l++;
+					}
+				wp_reset_postdata();
+				?>
+			</div>
+			
+		<?php
+		}
 		?>
 	</section>
 	
