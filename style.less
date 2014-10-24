@@ -511,6 +511,9 @@ ARTISTS
 #artists-macaroni-anchor{
 	width:40px;
 	height:auto;
+	@media screen and (min-width:768px){
+		width:60px;	
+	}
 }
 
 #artists h1{
@@ -519,6 +522,9 @@ ARTISTS
 	font-weight: 700;
 	line-height: 1.33em;
 	padding: 20px 0;
+	@media screen and (min-width:768px){
+		font-size:36px;
+	}
 }
 
 #artists-artist-container{
@@ -527,6 +533,7 @@ ARTISTS
 	overflow: hidden;
 	@media screen and (min-width:768px){
 		width:100%;	
+		padding:34px 0;
 	}
 }
 
@@ -555,6 +562,11 @@ ARTISTS
 .artists-featured-image img{
 	width:230px;
 	height:230px;
+	@media screen and (min-width:768px){
+		width:140px;
+		height:140px;
+	}
+	
 }
 
 .artists-name{
@@ -656,21 +668,19 @@ ABOUT
 		background-size:cover;
 		min-height:400px;
 		padding:15px;
+		@media screen and (min-width:768px){
+			padding:35px 70px;
+		}
 		h1{
 			text-transform: uppercase;
 			font-weight: 700;
 			padding: 30px 0;
+			@media screen and (min-width:768px){
+				font-size: 18px;
+			}
 		}
 		p{
 			line-height: 1.25em;
-		}
-		a{
-			font-size: 12px;
-			color:@orange;
-			text-transform: uppercase;
-			text-decoration: underline;
-			position: absolute;
-			bottom: 30px;
 		}
 		@media screen and (min-width:768px){
 			position: relative;
@@ -711,6 +721,9 @@ CONTACT
 		font-size: 20px;
 		font-weight: 700;
 		padding:15px 0;
+		@media screen and (min-width:768px){
+			font-size: 40px;
+		}
 	}
 	input,textarea{
 		background:none;
@@ -721,6 +734,15 @@ CONTACT
 		font-style: italic;
 		padding:15px;
 		margin: 15px 0;
+	}
+	@media screen and (min-width:768px){
+		input{
+			width:49%;
+			float:right;
+		}
+		input:first-of-type{
+			float:left;
+		}
 	}
 	input:focus,textarea:focus{
 		border:1px solid @orange;
@@ -760,5 +782,11 @@ CONTACT
 		font-weight: 700;
 		text-transform: uppercase;
 		margin-bottom: 15px;
+		@media screen and (min-width:768px){
+			font-size: 18px;
+			width:135px;
+			height:60px;
+			float:right;
+		}
 	}
 }

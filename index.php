@@ -155,7 +155,7 @@
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1>Contact Us</h1>
-				<form name="form" action="contact.php" method="post" id="contact-form" novalidate>
+				<form name="form" action="contact.php" method="post" id="contact-form" novalidate class="clearfix">
 					<input name="email" type="email" id="email" placeholder="Your email address">
 					<input type="text" id="name" name="name" placeholder="Your name">
 					<textarea name="comments" placeholder="Your message"></textarea>
