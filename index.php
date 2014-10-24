@@ -178,11 +178,21 @@
 						$faq_count = $faq_query->post_count;
 						?>
 						
-						<div class="carousel" id="faq-carousel">
+						<div class="carousel visible-*-block" id="faq-carousel-small">
 							<span class="glyphicon glyphicon-arrow-left"></span>
 							<?php
 								for ($l=0;$l<$faq_count;$l++){ ?>		
 									<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+							<?php
+								}
+							?>	
+							<span class="glyphicon glyphicon-arrow-right"></span>
+						</div>
+						<div class="carousel hidden-xs" id="faq-carousel-wide">
+							<span class="glyphicon glyphicon-arrow-left"></span>
+							<?php
+								for ($l=0;$l<$faq_count;$l++){ ?>		
+									<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
 							<?php
 								}
 							?>	
