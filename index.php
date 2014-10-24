@@ -165,64 +165,74 @@
 		</div>
 	</section>
 	<section id="faq">
-		<h1>FAQS</h1>
-		<?php 
-		$args = array(
-			'post_type' => 'faq',
-			'orderby'	=> 'ID',
-			'order'		=> 'ASC'
-		);
-		$l=0;
-		$faq_query = new WP_Query( $args );
-		if ( $faq_query->have_posts() ) {
-			$faq_count = $faq_query->post_count;
-			?>
-			
-			<div class="carousel visible-*-block" id="faq-carousel-small">
-				<span class="glyphicon glyphicon-arrow-left"></span>
-				<?php
-					for ($l=0;$l<$faq_count;$l++){ ?>		
-						<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-				<?php
-					}
-				?>	
-				<span class="glyphicon glyphicon-arrow-right"></span>
-			</div>
-			<div class="carousel hidden-xs" id="faq-carousel-wide">
-				<span class="glyphicon glyphicon-arrow-left"></span>
-				<?php
-					for ($l=0;$l<$faq_count;$l++){ ?>		
-						<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-				<?php
-					}
-				?>	
-				<span class="glyphicon glyphicon-arrow-right"></span>
-			</div>
-			<div id="faq-overflow">
-				<?php
-					while ( $faq_query->have_posts() ) {
-						$faq_query->the_post();
-						?>
-						<div class="faq-item-container" id="item-<?php echo $l; ?>">
-							<div class="faq-item-question">
-								<h2><?php the_title(); ?></h2>
-							</div>
-							<?php if ($post->post_excerpt) {?>
-							<div class="faq-item-answer">
-									<?php the_excerpt(); ?>
-							</div>
-							<? }; ?>
-						</div>
+		<div class="container">
+			<div class="col-xs-12 col-md-12">
+				<h1>FAQS</h1>
+				<?php 
+				$args = array(
+					'post_type' => 'faq',
+					'orderby'	=> 'ID',
+					'order'		=> 'ASC'
+				);
+				$l=0;
+				$faq_query = new WP_Query( $args );
+				if ( $faq_query->have_posts() ) {
+					$faq_count = $faq_query->post_count;
+					?>
+					
+					<div class="faq-carousel carousel visible-xs-block" id="faq-carousel-small">
+						<span class="glyphicon glyphicon-arrow-left"></span>
 						<?php
-						$l++;
-					}
-				wp_reset_postdata();
+							for ($l=0;$l<$faq_count;$l++){ ?>		
+								<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+						<?php
+							}
+						?>	
+						<span class="glyphicon glyphicon-arrow-right"></span>
+					</div>
+					<!--<div class="faq-carousel carousel hidden-xs" id="faq-carousel-wide">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						<?php
+							for ($l=0;$l<$faq_count;$l++){ ?>		
+								<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+						<?php
+							}
+						?>	
+						<span class="glyphicon glyphicon-arrow-right"></span>
+					</div>-->
+					<div id="faq-overflow" style="left:0;">
+						<?php
+							$m=0;
+							while ( $faq_query->have_posts() ) {
+								$faq_query->the_post();
+								?>
+								<div class="faq-item-container <?php if ($m > 2){ echo 'wide-hidden'; }; ?>" id="faq-item-<?php echo $m; ?>">
+									<div class="faq-item-question">
+										<h2><?php the_title(); ?></h2>
+									</div>
+									<?php if ($post->post_excerpt) {?>
+									<div class="faq-item-answer">
+											<?php the_excerpt(); ?>
+									</div>
+									<? } else { ?>
+									<div class="faq-item-answer">
+											<?php the_content(); ?>
+									</div>
+									<?	}; ?>
+								</div>
+								<?php
+								$m++;
+							}
+						wp_reset_postdata();
+						?>
+					</div>
+					<div class="hidden-xs" id="faq-view-all">View All FAQS</div>
+					
+				<?php
+				}
 				?>
 			</div>
-			
-		<?php
-		}
-		?>
+		</div>
 	</section>
 	
 </section>				
@@ -240,9 +250,18 @@
     .artists-artist{
 	    width:<?php echo 100/$count; ?>%;
     }
+    #faq-overflow{
+	    width:<?php echo $faq_count; ?>00%;
+    }
+    .faq-item-container{
+	    width:<?php echo 100/$faq_count; ?>%;
+    }
     @media screen and (min-width:768px){ 
-	    #overflow{
+	    #overflow,#faq-overflow{
 	    	width:100%;
+	    }
+	    .faq-item-container{
+		    width:33%;
 	    }
 	}
 

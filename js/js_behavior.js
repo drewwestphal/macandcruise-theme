@@ -56,10 +56,63 @@ $(document).ready(function(){
 		}
 	});
     
-    $(window).resize(function(){
-	    if ($(window).width()>767){
-		    $('#overflow').css('left', 0);
-	    }
+    
+    //faq
+    var faqCount = $('#faq-overflow .faq-item-container').length;
+	faqPosition = 0;
+	$('.faq-carousel a').click(function(event){
+	    faqPosition = $(this).index();
+	    var faqAdjusted = -(faqPosition-1)*100;
+        $('#faq-overflow').css('left', faqAdjusted+'%');
+        $('#faq-carousel-small a').removeClass('orange-text');
+        $(this).addClass('orange-text');
+        
+	    event.preventDefault();
     });
+    $('.faq-carousel span').click(function(){
+	    var faqOverflowWidth = $('#faq-overflow').width();
+	    var faqOverflowLeft = $('#faq-overflow').css('left');
+	    var faqWindowWidth = $(window).width();
+	    var faqSpanPosition = $(this).index();
+	    var faqOrange = function(){
+		    $('#faq-carousel-small a').removeClass('orange-text');
+		    $('#faq-carousel-small a:nth-child('+(faqPosition+1)+')').addClass('orange-text');
+	    };
+		
+		if (faqSpanPosition > 0){
+			faqPosition++;
+			if (faqPosition > faqCount) {
+				$('#faq-overflow').css('left', 0);
+				faqPosition=1;
+				faqOrange();
+			} else {
+				$('#faq-overflow').css('left', -((faqPosition-1)*100)+'%');
+				faqOrange();
+			}
+		} else {
+			faqPosition--;
+			if (faqPosition < 1) {
+				$('#faq-overflow').css('left', -((faqCount-1)*100)+'%');
+				faqPosition=faqCount;
+				faqOrange();
+			} else {
+				$('#faq-overflow').css('left', -((faqPosition-1)*100)+'%');
+				faqOrange();
+			}
+		}
+	});
+	$('#faq-view-all').click(function(){
+		$(this).hide();
+		$('.wide-hidden').removeClass('wide-hidden');
+	});
+    
 
+});
+
+$(window).resize(function(){
+	//artist
+    if ($(window).width()>767){
+	    $('#overflow').css('left', 0);
+	    $('#faq-overflow').css('left', 0);
+    }
 });

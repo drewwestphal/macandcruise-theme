@@ -67,6 +67,7 @@ table {
 @blue: rgb(98,128,181);
 @darkblue: rgb(42,58,100);
 @gray: rgb(214,214,214);
+@darkgray: rgb(147,147,147);
 @unblack:rgb(47,47,47);
 @white:rgb(255,255,255);
 @unwhite:rgb(254,254,254);
@@ -804,13 +805,18 @@ FAQ
 
 #faq{
 	background: @white;
-	color:@gray;
+	color:@darkgray;
 	text-align: center;
 	padding:32px 0;
 	font-size: 20px;
+	width:100%;
+	overflow-x: hidden;
 	h1{
 		font-weight: 700;
 		margin-bottom: 20px;
+		@media screen and (min-width:768px){
+			font-size: 30px;	
+		}
 	}
 	h1,h2{
 		color:@blue;
@@ -827,5 +833,41 @@ FAQ
 	}
 	a.orange-text{
 		color:@orange;
+	}
+	#faq-overflow{
+		position: relative;
+		left:0;
+		transition: left .27s;
+		-moz-transition: left .27s;
+		-webkit-transition: left .27s;
+
+	}
+	.faq-item-container{
+		font-family: 'Lato',sans-serif;
+		font-size: 16px;
+		text-align: left;
+		padding:0 15px;
+		float: left;
+		h2{
+			font-weight: 700;
+			padding:15px 0;	
+		}
+	}
+	.wide-hidden{
+		@media screen and (min-width:768px){
+			display: none;
+		}
+	}
+	#faq-view-all{
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-size: 14px;
+		font-weight: 700;
+		padding: 20px 0;
+		position: relative;
+		top:30px;
+	}
+	#faq-view-all:hover{
+		cursor:pointer;
 	}
 }
