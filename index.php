@@ -260,12 +260,6 @@
 	
 </section>				
 
-
-
-
-
-<br><br><br>
-<?php //print_r(get_option('mac_settings')); ?>
 <style type="text/css">
     #overflow{
 	    width:<?php echo $count; ?>00%;
