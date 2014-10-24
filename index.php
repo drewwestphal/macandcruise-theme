@@ -182,7 +182,7 @@
 							<span class="glyphicon glyphicon-arrow-left"></span>
 							<?php
 								for ($l=0;$l<$faq_count;$l++){ ?>		
-									<a href="#item-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+									<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
 							<?php
 								}
 							?>	
