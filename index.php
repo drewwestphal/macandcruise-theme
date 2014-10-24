@@ -152,13 +152,17 @@
 				?>
 	</section>
 	<section id="contact">
-		<h1>Contact</h1>
-		<form name="form" action="contact.php" method="post" id="formulaone" novalidate>
-		<input type="text" id="name" name="name">
-		<input name="email" type="email" id="email"></input>
-		<textarea name="comments">
-		<button type="submit" value="Submit">Submit</button>
-	</form>
+		<div class="container">
+			<div class="col-xs-12 col-md-12">
+				<h1>Contact Us</h1>
+				<form name="form" action="contact.php" method="post" id="contact-form" novalidate>
+					<input name="email" type="email" id="email" placeholder="Your email address">
+					<input type="text" id="name" name="name" placeholder="Your name">
+					<textarea name="comments" placeholder="Your message"></textarea>
+					<button type="submit" value="Submit">Submit</button>
+				</form>
+			</div>
+		</div>
 	</section>
 	
 </section>				

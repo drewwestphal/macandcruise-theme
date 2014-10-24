@@ -704,9 +704,43 @@ CONTACT
 #contact{
 	background:@darkblue;
 	text-align: center;
+	padding: 20px 0;
 	h1{
 		color:@orange;
 		text-transform: uppercase;
+		font-size: 20px;
 		font-weight: 700;
+		padding:15px 0;
+	}
+	input,textarea{
+		background:none;
+		color:@white;
+		width:100%;
+		border:1px solid @white;
+		font-family: 'Lato',sans-serif;
+		font-style: italic;
+		padding:15px;
+		margin: 15px 0;
+	}
+	textarea{
+		height:128px
+	}
+	input::-webkit-input-placeholder{
+	    color:@white;
+	}
+	input:-moz-placeholder {
+	    color:@white;
+	}
+	textarea::-webkit-input-placeholder {
+	   color: @white;
+	}
+	textarea:-moz-placeholder {
+	   color: @white;  
+	}
+	textarea::-moz-placeholder {
+	   color: @white;  
+	}
+	textarea:-ms-input-placeholder {  
+	   color: @white;  
 	}
 }
