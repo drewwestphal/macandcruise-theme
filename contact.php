@@ -1,5 +1,5 @@
 <?php
-if (FILTER_VALIDATE_EMAIL($_REQUEST['email']) && isset($_REQUEST['name'] && isset($_REQUEST['comments']))
+if (filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL) && isset($_REQUEST['name'] && isset($_REQUEST['comments']))
   {
   $name = $_REQUEST['name'] ;
   $email = $_REQUEST['email'] ;
