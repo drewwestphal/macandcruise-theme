@@ -9,6 +9,16 @@ global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
 
 }
+include('mac_options.php');
+add_filter( 'pre_get_posts', 'my_get_posts' );
+
+function my_get_posts( $query ) {
+
+	if ( is_home() && $query->is_main_query() || is_feed() )
+		$query->set( 'post_type', array( 'post', 'page', 'artist' ) );
+
+	return $query;
+}
 function mac_register_theme_menu() {
     register_nav_menu( 'primary', 'Main Nav' );
 }

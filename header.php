@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <!-- custom css 
 <link rel="stylesheet" type="text/css" href="/wp-content/themes/MacAndCruise/css/custom.css" />-->
-<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 
 
@@ -39,7 +39,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-	<div class="container-fluid">
+	<div class="container-fluid" id="header-container">
 		<div class="row">
 			<header id="header" role="banner" class="">
 				<nav class="navbar navbar-default" role="navigation">
@@ -52,7 +52,7 @@
 						    <span class="icon-bar"></span>
 						    <span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="/"><h1>Macaroni <span class="orange-text">&</span> Cruise</h1></a>
+						  <a class="navbar-brand" href="/"><h1><?php echo get_option('mac_settings')['mac_html_friendly_title'];?></h1></a>
 						</div>
 						
 						<!-- Collect the nav links, forms, and other content for toggling -->
