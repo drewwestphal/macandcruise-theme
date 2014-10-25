@@ -22,6 +22,34 @@ function my_get_posts( $query ) {
 function mac_register_theme_menu() {
     register_nav_menu( 'primary', 'Main Nav' );
 }
+function mac_clean_menu() {
+	$menu_name = 'primary'; // specify custom menu slug
+	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+		$midpoint =  floor(count($menu_items)/2);
+		$i=0;
+		foreach ((array) $menu_items as $key => $menu_item) {
+			if (get_option('mac_settings')['mac_booking_enabled'] && $i==$midpoint) { 
+				$menu_list .= '<li class="hidden-xs" aria-hidden="true"><a href="'. get_option('mac_settings')['mac_booking_url'] .'" class="orange-text"><span class="glyphicon glyphicon-calendar"></span>Book Now</a></li>';
+			}
+				$title = $menu_item->title;
+				$orange = '';
+				$span = '';
+				if (stripos($menu_item->title, 'book') !== false) {
+					$orange = 'class="orange-text"';
+					$span = '<span class="glyphicon glyphicon-calendar"></span>';
+				};
+				$url = $menu_item->url;
+				$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"'. $orange .'>'. $span . $title .'</a></li>' ."\n";
+				
+			$i++;
+		}
+	} else {
+		// $menu_list = '<!-- no list defined -->';
+	}
+	echo $menu_list;
+}
 add_action( 'init', 'mac_register_theme_menu' );
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts()

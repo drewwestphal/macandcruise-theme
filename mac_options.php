@@ -50,6 +50,14 @@ function mac_settings_init(  ) {
 		'mac_site_settings' 
 	);
 	
+	add_settings_field( 
+		'mac_booking_url', 
+		__( 'Booking Path', 'wordpress' ), 
+		'mac_booking_url_render', 
+		'pluginPage', 
+		'mac_site_settings' 
+	);
+	
 	//hero settings
 	add_settings_section(
 		'mac_hero_settings', 
@@ -117,6 +125,14 @@ function mac_settings_init(  ) {
 
 }
 
+function mac_html_friendly_title_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type='text' name='mac_settings[mac_html_friendly_title]' value='<?php echo $options['mac_html_friendly_title']; ?>'>
+	<?php
+
+}
 
 function mac_booking_enabled_render(  ) { 
 
@@ -127,15 +143,14 @@ function mac_booking_enabled_render(  ) {
 
 }
 
-function mac_html_friendly_title_render(  ) { 
+function mac_booking_url_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_html_friendly_title]' value='<?php echo $options['mac_html_friendly_title']; ?>'>
+	<input type='text' name='mac_settings[mac_booking_url]' value='<?php echo $options['mac_booking_url']; ?>'>
 	<?php
 
 }
-
 
 function mac_travel_dates_render(  ) { 
 
@@ -151,8 +166,7 @@ function mac_travel_description_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description]'> 
-		<?php echo $options['mac_travel_description']; ?>
+	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description]'><?php echo $options['mac_travel_description']; ?>
  	</textarea>
 	<?php
 

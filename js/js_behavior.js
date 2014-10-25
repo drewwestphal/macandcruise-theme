@@ -105,7 +105,6 @@ $(document).ready(function(){
 		$(this).hide();
 		$('.wide-hidden').removeClass('wide-hidden');
 	});
-    
 
 });
 

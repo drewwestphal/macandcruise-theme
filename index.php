@@ -199,7 +199,7 @@
 							}
 						?>	
 						<span class="glyphicon glyphicon-arrow-right"></span>
-					</div>-->
+					</div>-->	
 					<div id="faq-overflow" style="left:0;">
 						<?php
 							$m=0;

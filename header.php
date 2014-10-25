@@ -55,23 +55,19 @@
 						  <a class="navbar-brand" href="/"><h1><?php echo get_option('mac_settings')['mac_html_friendly_title'];?></h1></a>
 						</div>
 						
-						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						  <ul class="nav navbar-nav">
-						  	<!--<?php wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) ); ?>-->
-						    <li class="active"><a href="#">Link</a></li>
-						    <li><a href="#">Link</a></li>
-						    <li><a href="#" class="orange-text"><span class="glyphicon glyphicon-calendar"></span>Link</a></li>
-						    <li><a href="#">Link</a></li>
-						    <li><a href="#">Link</a></li>
+							<?
+							if (get_option('mac_settings')['mac_booking_enabled']) {  ?>
+									<li class="visible-xs"><a href="<?php echo get_option('mac_settings')['mac_booking_url']; ?>" class="orange-text"><span class="glyphicon glyphicon-calendar"></span>Book Now</a></li>
+							<?
+							}
+								  mac_clean_menu();
+							  ?>
 						  </ul>
-						  <!--<ul class="nav navbar-nav navbar-right">
-						    <li><a href="#">Link</a></li>
-						  </ul>-->
-						</div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
+						</div>
+					</div>
 				</nav>
-
 			</header>
 		</div>
 	</div>
