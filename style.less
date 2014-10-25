@@ -739,12 +739,19 @@ CONTACT
 		padding:15px;
 		margin: 15px 0;
 	}
+	#honeypot{
+		display: none;
+		position:absolute;
+		left:-10000;
+		height:-100px;
+		width:-100px;
+	}
 	@media screen and (min-width:768px){
-		input{
+		.contact-input{
 			width:49%;
 			float:right;
 		}
-		input:first-of-type{
+		.contact-input:first-of-type{
 			float:left;
 		}
 	}
@@ -792,6 +799,9 @@ CONTACT
 			height:60px;
 			float:right;
 		}
+	}
+	.orange-border{
+		border:1px solid @orange;
 	}
 }
 

@@ -58,6 +58,14 @@ function mac_settings_init(  ) {
 		'mac_site_settings' 
 	);
 	
+	add_settings_field( 
+		'mac_contact_email', 
+		__( 'Contact Form Email Address', 'wordpress' ), 
+		'mac_contact_email_render', 
+		'pluginPage', 
+		'mac_site_settings' 
+	);
+	
 	//hero settings
 	add_settings_section(
 		'mac_hero_settings', 
@@ -148,6 +156,15 @@ function mac_booking_url_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_booking_url]' value='<?php echo $options['mac_booking_url']; ?>'>
+	<?php
+
+}
+
+function mac_contact_email_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type='text' name='mac_settings[mac_contact_email]' value='<?php echo $options['mac_contact_email']; ?>'>
 	<?php
 
 }

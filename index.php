@@ -155,10 +155,17 @@
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1>Contact Us</h1>
-				<form name="form" action="contact.php" method="post" id="contact-form" novalidate class="clearfix">
-					<input name="email" type="email" id="email" placeholder="Your email address">
-					<input type="text" id="name" name="name" placeholder="Your name">
-					<textarea name="comments" placeholder="Your message"></textarea>
+				<form name="form" action="/wp-content/themes/MacAndCruise/contact.php" method="post" id="contact-form" novalidate class="clearfix">
+					<div class="contact-input" id="contact-input-email">
+						<input name="email" type="email" id="email" placeholder="Your email address">
+					</div>
+					<div class="contact-input" id="contact-input-name">
+						<input type="text" id="name" name="name" placeholder="Your name">
+					</div>
+					<input type="text" id="honeypot" name="honeypot" aria-hidden="true" placeholder="Please leave blank.">
+					<div class="contact-comments" id="contact-comments">
+						<textarea name="comments" id="comments" placeholder="Your message"></textarea>
+					</div>
 					<button type="submit" value="Submit">Submit</button>
 				</form>
 			</div>
@@ -285,3 +292,4 @@
 </style>
 
 <script src="/wp-content/themes/MacAndCruise/js/js_behavior.js"></script>
+<script src="/wp-content/themes/MacAndCruise/js/js_contact.js"></script>
