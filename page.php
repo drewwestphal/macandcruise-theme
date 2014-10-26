@@ -45,7 +45,7 @@
 		</div>
 	</section>
 <?php } elseif ( is_page( 'News' ) ){ ?>
-	<section class="mac-news" id="page-news">
+	<section class="mac-page" id="page-news">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1 class="orange-text">News</h1>
