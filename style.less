@@ -85,7 +85,7 @@ body{
 	height:100%;
 	font-family: 'Arvo', sans-serif;
 	letter-spacing: .5px;
-	background:@blue;
+	background:@white;
 }
 
 .orange-text{
@@ -812,7 +812,9 @@ FAQ
 
 
 */
-
+.faq{
+	background: @white;
+}
 #faq{
 	background: @white;
 	color:@darkgray;
@@ -851,7 +853,7 @@ FAQ
 		-moz-transition: left .27s;
 		-webkit-transition: left .27s;
 		overflow:hidden;
-
+		margin-bottom: 30px;
 	}
 	.faq-item-container{
 		font-family: 'Lato',sans-serif;
@@ -875,13 +877,14 @@ FAQ
 		}
 	}
 	#faq-view-all{
+		color:@darkgray;
 		text-transform: uppercase;
 		text-decoration: underline;
-		font-size: 14px;
+		font-size: 18px;
 		font-weight: 700;
-		padding: 20px 0;
-		position: relative;
-		top:30px;
+		@media screen and (min-width:768px){
+			font-size: 14px;
+		}
 	}
 	#faq-view-all:hover{
 		cursor:pointer;
@@ -930,11 +933,56 @@ SPONSORS
 	}
 }
 
+/*
+	
+pages	
+	
+	
+*/
 
+.page{
+	background:@darkblue;
+}
+.mac-page{
+	background:@darkblue;
+	padding: 36px 0;
+	h1{
+		font-size: 36px;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	article {
+		padding:20px 0;
+		h1{
+			font-size: 20px;
+			text-align: left;
+		}
+		p{
+			font-family: 'Lato',sans-serif;
+			font-size: 20px;
+		}
+	}
+}
 
-
-
-
-
-
-
+.mac-news{
+	background:@darkblue;
+	padding: 36px 0;
+	h1{
+		font-size: 36px;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	article {
+		padding:20px 0;
+		h1{
+			font-size: 20px;
+			text-align: left;
+		}
+		p{
+			font-family: 'Lato',sans-serif;
+			font-size: 20px;
+		}
+	}
+}

@@ -171,6 +171,8 @@
 			</div>
 		</div>
 	</section>
+	<div class="faq container">
+	<div class="faq col-xs-12 col-md-12">
 	<section id="faq">
 				<h1>FAQS</h1>
 				<?php 
@@ -246,8 +248,10 @@
 				<?php
 				}
 				?>
-				<a id="faq-view-all" href="">View All FAQS</a>
+				<a id="faq-view-all" href="/faq">View All FAQS</a>
 	</section>
+			</div>
+			</div>
 	<section id="sponsors">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
