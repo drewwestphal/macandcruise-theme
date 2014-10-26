@@ -179,7 +179,14 @@
 				$args = array(
 					'post_type' => 'faq',
 					'orderby'	=> 'ID',
-					'order'		=> 'ASC'
+					'order'		=> 'ASC',
+					'meta_query' => array(
+				        array(
+				            'key' => 'show_on_front_page',
+				            'value' => '"show on front page"',
+				            'compare' => 'LIKE'
+				        )
+				    )
 				);
 				$l=0;
 				$faq_query = new WP_Query( $args );
