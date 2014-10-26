@@ -57,7 +57,7 @@ $(document).ready(function(){
 	});
     
     
-    //faq
+    //faq small
     var faqCount = $('#faq-overflow .faq-item-container').length;
 	faqPosition = 0;
 	$('.faq-carousel a').click(function(event){
@@ -69,7 +69,7 @@ $(document).ready(function(){
         
 	    event.preventDefault();
     });
-    $('.faq-carousel span').click(function(){
+    $('#faq-carousel-small span').click(function(){
 	    var faqOverflowWidth = $('#faq-overflow').width();
 	    var faqOverflowLeft = $('#faq-overflow').css('left');
 	    var faqWindowWidth = $(window).width();
@@ -101,9 +101,48 @@ $(document).ready(function(){
 			}
 		}
 	});
-	$('#faq-view-all').click(function(){
-		$(this).hide();
-		$('.wide-hidden').removeClass('wide-hidden');
+	//faq wide
+    var faqWideCount = $('#faq-overflow .faq-group').length;
+	faqWidePosition = 0;
+	$('.faq-carousel a').click(function(event){
+	    faqWidePosition = $(this).index();
+	    var faqAdjusted = -(faqWidePosition-1)*100;
+        $('#faq-overflow').css('left', faqAdjusted+'%');
+        $('#faq-carousel-wide a').removeClass('orange-text');
+        $(this).addClass('orange-text');        
+	    event.preventDefault();
+    });
+	$('#faq-carousel-wide span').click(function(){
+	    var faqOverflowWidth = $('#faq-overflow').width();
+	    var faqOverflowLeft = $('#faq-overflow').css('left');
+	    var faqWindowWidth = $(window).width();
+	    var faqSpanPosition = $(this).index();
+	    var faqOrange = function(){
+		    $('#faq-carousel-wide a').removeClass('orange-text');
+		    $('#faq-carousel-wide a:nth-child('+(faqWidePosition+1)+')').addClass('orange-text');
+	    };
+		
+		if (faqSpanPosition > 0){
+			faqWidePosition++;
+			if (faqWidePosition > faqWideCount) {
+				$('#faq-overflow').css('left', 0);
+				faqWidePosition=1;
+				faqOrange();
+			} else {
+				$('#faq-overflow').css('left', -((faqWidePosition-1)*100)+'%');
+				faqOrange();
+			}
+		} else {
+			faqWidePosition--;
+			if (faqWidePosition < 1) {
+				$('#faq-overflow').css('left', -((faqWideCount-1)*100)+'%');
+				faqWidePosition=faqWideCount;
+				faqOrange();
+			} else {
+				$('#faq-overflow').css('left', -((faqWidePosition-1)*100)+'%');
+				faqOrange();
+			}
+		}
 	});
 	
 	//smooth scroll

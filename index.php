@@ -172,8 +172,6 @@
 		</div>
 	</section>
 	<section id="faq">
-		<div class="container">
-			<div class="col-xs-12 col-md-12">
 				<h1>FAQS</h1>
 				<?php 
 				$args = array(
@@ -204,23 +202,25 @@
 						?>	
 						<span class="glyphicon glyphicon-arrow-right"></span>
 					</div>
-					<!--<div class="faq-carousel carousel hidden-xs" id="faq-carousel-wide">
+					<div class="faq-carousel carousel hidden-xs" id="faq-carousel-wide">
 						<span class="glyphicon glyphicon-arrow-left"></span>
 						<?php
-							for ($l=0;$l<$faq_count;$l++){ ?>		
+							$wide_count = ceil($faq_count/3);
+							for ($l=0;$l<$wide_count;$l++){ ?>		
 								<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
 						<?php
 							}
 						?>	
 						<span class="glyphicon glyphicon-arrow-right"></span>
-					</div>-->	
+					</div>	
 					<div id="faq-overflow" style="left:0;">
 						<?php
-							$m=0;
+							$m=1;
 							while ( $faq_query->have_posts() ) {
 								$faq_query->the_post();
+								if ($m == 1) { ?> <div class="faq-group"> <?php };
 								?>
-								<div class="faq-item-container <?php if ($m > 2){ echo 'wide-hidden'; }; ?>" id="faq-item-<?php echo $m; ?>">
+								<div class="faq-item-container" id="faq-item-<?php echo $m; ?>">
 									<div class="faq-item-question">
 										<h2><?php the_title(); ?></h2>
 									</div>
@@ -235,18 +235,18 @@
 									<?	}; ?>
 								</div>
 								<?php
+								if ($m%3 == 0 && $m > 1) { ?> </div><div class="faq-group"> <?php };
 								$m++;
 							}
+							
 						wp_reset_postdata();
-						?>
+						?></div>
 					</div>
-					<div class="hidden-xs" id="faq-view-all">View All FAQS</div>
 					
 				<?php
 				}
 				?>
-			</div>
-		</div>
+				<a id="faq-view-all" href="">View All FAQS</a>
 	</section>
 	<section id="sponsors">
 		<div class="container">
@@ -288,8 +288,14 @@
 	    width:<?php echo 100/$faq_count; ?>%;
     }
     @media screen and (min-width:768px){ 
-	    #overflow,#faq-overflow{
+	    #overflow{
 	    	width:100%;
+	    }
+	    #faq-overflow{
+		    width:<?php echo $wide_count; ?>00%;
+	    }
+	    .faq-group{
+		    width:<?php echo 100/$wide_count; ?>%;
 	    }
 	    .faq-item-container{
 		    width:33%;

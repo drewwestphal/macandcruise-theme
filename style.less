@@ -817,10 +817,10 @@ FAQ
 	background: @white;
 	color:@darkgray;
 	text-align: center;
-	padding:32px 0;
+	padding:32px 15px;
 	font-size: 20px;
 	width:100%;
-	overflow-x: hidden;
+	overflow: hidden;
 	h1{
 		font-weight: 700;
 		margin-bottom: 20px;
@@ -850,6 +850,7 @@ FAQ
 		transition: left .27s;
 		-moz-transition: left .27s;
 		-webkit-transition: left .27s;
+		overflow:hidden;
 
 	}
 	.faq-item-container{
@@ -863,9 +864,14 @@ FAQ
 			padding:15px 0;	
 		}
 	}
-	.wide-hidden{
-		@media screen and (min-width:768px){
-			display: none;
+	@media screen and (min-width:768px){
+		.faq-group{
+			float: left;
+			position: relative;
+
+		}
+		.faq-group:first-of-type{
+			left:0;
 		}
 	}
 	#faq-view-all{
