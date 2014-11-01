@@ -7,10 +7,10 @@
 				<h2 id="hero-site-desciption"><?php bloginfo( 'description' ); ?></h2>
 				<?php if (get_option('mac_settings')['mac_travel_dates']){ ?>
 				<h3 id="hero-travel-dates"><?php echo get_option('mac_settings')['mac_travel_dates'];?></h3>
-				<? }; ?>
+				<?php  }; ?>
 				<?php if (get_option('mac_settings')['mac_travel_description']){ ?>
 				<h4 id="hero-travel-description_wide"><?php echo get_option('mac_settings')['mac_travel_description'];?></h4>
-				<? }; ?>
+				<?php  }; ?>
 				<?php 
 					if (get_option('mac_settings')['mac_booking_enabled']) { 
 						//book now button?
@@ -19,7 +19,7 @@
 						<?php if( function_exists( 'mc4wp_form' ) ) {
 						    mc4wp_form();
 						} ?>
-				 <? }
+				 <?php  }
 				?>
 				<section id="hero-more-info">
 					<div id="hero-more-info-button">
@@ -42,10 +42,10 @@
 				<section id="social">
 					<?php if (get_option('mac_settings')['mac_facebook_url']){ ?>
 					<a class="social-icon" id="facebook" href="<?php echo get_option('mac_settings')['mac_facebook_url']; ?>" target="_blank"><img src="/wp-content/themes/MacAndCruise/img/facebook.png" alt="The Facebook icon."></a>
-					<? }; ?>
+					<?php  }; ?>
 					<?php if (get_option('mac_settings')['mac_twitter_url']){ ?>
 					<a class="social-icon" id="twitter" href="<?php echo get_option('mac_settings')['mac_twitter_url']; ?>" target="_blank"><img src="/wp-content/themes/MacAndCruise/img/twitter.png" alt="The Twitter icon."></a>
-					<? }; ?>
+					<?php  }; ?>
 				</section>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 				<img src="/wp-content/themes/MacAndCruise/img/macaroni_anchor.png" alt="A macaroni anchor." id="artists-macaroni-anchor">
 			<?php if (get_option('mac_settings')['mac_talent_header']){ ?>
 				<h1 id="artists-header" class="orange-text"><?php echo get_option('mac_settings')['mac_talent_header']; ?></h1>
-			<? }; ?>
+			<?php  }; ?>
 						<?php 
 							$args = array(
 								'post_type' => 'artist',
@@ -70,8 +70,7 @@
 				<div id="artists-artist-container">
 					<div id="overflow">
 						<div class="inner">
-							<?php
-							if ( $artist_query->have_posts() ) {
+							<?php 							if ( $artist_query->have_posts() ) {
 								while ( $artist_query->have_posts() ) {
 									$artist_query->the_post();
 									?>
@@ -92,10 +91,9 @@
 												<?php the_excerpt(); ?>
 											</div>
 										</section>
-										<? }; ?>
+										<?php  }; ?>
 									</div>
-									<?php
-									$j++;
+									<?php 									$j++;
 								}
 							}
 
@@ -106,11 +104,9 @@
 				</div>
 				<div class="carousel" id="artist-carousel">
 					<span class="glyphicon glyphicon-arrow-left"></span>
-					<?php
-						for ($i=0;$i<$count;$i++){ ?>		
+					<?php 						for ($i=0;$i<$count;$i++){ ?>		
 							<a href="#item-<?php echo $i; ?>" <?php if ($i===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-					<?php
-						}
+					<?php 						}
 					?>	
 					<span class="glyphicon glyphicon-arrow-right"></span>
 				</div>
@@ -142,8 +138,7 @@
 									<?php }; ?>
 								</div>
 							</div>
-							<?php
-							$k++;
+							<?php 							$k++;
 						}
 					}
 
@@ -196,28 +191,23 @@
 					
 					<div class="faq-carousel carousel visible-xs-block" id="faq-carousel-small">
 						<span class="glyphicon glyphicon-arrow-left"></span>
-						<?php
-							for ($l=0;$l<$faq_count;$l++){ ?>		
+						<?php 							for ($l=0;$l<$faq_count;$l++){ ?>		
 								<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-						<?php
-							}
+						<?php 							}
 						?>	
 						<span class="glyphicon glyphicon-arrow-right"></span>
 					</div>
 					<div class="faq-carousel carousel hidden-xs" id="faq-carousel-wide">
 						<span class="glyphicon glyphicon-arrow-left"></span>
-						<?php
-							$wide_count = ceil($faq_count/3);
+						<?php 							$wide_count = ceil($faq_count/3);
 							for ($l=0;$l<$wide_count;$l++){ ?>		
 								<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-						<?php
-							}
+						<?php 							}
 						?>	
 						<span class="glyphicon glyphicon-arrow-right"></span>
 					</div>	
 					<div id="faq-overflow" style="left:0;">
-						<?php
-							$m=1;
+						<?php 							$m=1;
 							while ( $faq_query->have_posts() ) {
 								$faq_query->the_post();
 								if ($m == 1) { ?> <div class="faq-group"> <?php };
@@ -230,14 +220,13 @@
 									<div class="faq-item-answer">
 											<?php the_excerpt(); ?>
 									</div>
-									<? } else { ?>
+									<?php  } else { ?>
 									<div class="faq-item-answer">
 											<?php the_content(); ?>
 									</div>
-									<?	}; ?>
+									<?php 	}; ?>
 								</div>
-								<?php
-								if ($m%3 == 0 && $m > 1) { ?> </div><div class="faq-group"> <?php };
+								<?php 								if ($m%3 == 0 && $m > 1) { ?> </div><div class="faq-group"> <?php };
 								$m++;
 							}
 							
@@ -245,8 +234,7 @@
 						?></div>
 					</div>
 					
-				<?php
-				}
+				<?php 				}
 				?>
 				<a id="faq-view-all" href="/faq">View All FAQS</a>
 	</section>
@@ -255,8 +243,7 @@
 	<section id="sponsors">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
-				<?php
-				$args = array(
+				<?php 				$args = array(
 					'post_type' => 'sponsors',
 					'LIMIT'	=> '1'
 				);
@@ -266,8 +253,7 @@
 						$sponsors_query->the_post();
 						?>
 						<h1><?php the_title(); ?></h1>
-						<?php
-						the_content();
+						<?php 						the_content();
 					}
 					wp_reset_postdata();
 				}

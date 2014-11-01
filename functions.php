@@ -1,5 +1,4 @@
-<?php
-add_action( 'after_setup_theme', 'blankslate_setup' );
+<?php add_action( 'after_setup_theme', 'blankslate_setup' );
 function blankslate_setup()
 {
 load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );

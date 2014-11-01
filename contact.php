@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 if (isset($_REQUEST['email']) && isset($_REQUEST['name']) && isset($_REQUEST['comments']) && (strlen($_REQUEST['honeypot'])==0)) {
 
   $name = $_REQUEST['name'] ;

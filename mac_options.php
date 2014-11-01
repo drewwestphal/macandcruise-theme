@@ -1,5 +1,4 @@
-<?php
-add_action( 'admin_menu', 'mac_add_admin_menu' );
+<?php add_action( 'admin_menu', 'mac_add_admin_menu' );
 add_action( 'admin_init', 'mac_settings_init' );
 
 
@@ -138,8 +137,7 @@ function mac_html_friendly_title_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_html_friendly_title]' value='<?php echo $options['mac_html_friendly_title']; ?>'>
-	<?php
-
+	<?php 
 }
 
 function mac_booking_enabled_render(  ) { 
@@ -147,8 +145,7 @@ function mac_booking_enabled_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='checkbox' name='mac_settings[mac_booking_enabled]' <?php checked( $options['mac_booking_enabled'], 1 ); ?> value='1'>
-	<?php
-
+	<?php 
 }
 
 function mac_booking_url_render(  ) { 
@@ -156,8 +153,7 @@ function mac_booking_url_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_booking_url]' value='<?php echo $options['mac_booking_url']; ?>'>
-	<?php
-
+	<?php 
 }
 
 function mac_contact_email_render(  ) { 
@@ -165,8 +161,7 @@ function mac_contact_email_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_contact_email]' value='<?php echo $options['mac_contact_email']; ?>'>
-	<?php
-
+	<?php 
 }
 
 function mac_travel_dates_render(  ) { 
@@ -174,8 +169,7 @@ function mac_travel_dates_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_travel_dates]' value='<?php echo $options['mac_travel_dates']; ?>'>
-	<?php
-
+	<?php 
 }
 
 
@@ -185,8 +179,7 @@ function mac_travel_description_render(  ) {
 	?>
 	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description]'><?php echo $options['mac_travel_description']; ?>
  	</textarea>
-	<?php
-
+	<?php 
 }
 
 function mac_mailing_list_cta_render(  ) { 
@@ -194,8 +187,7 @@ function mac_mailing_list_cta_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_mailing_list_cta]' value='<?php echo $options['mac_mailing_list_cta']; ?>'>
-	<?php
-
+	<?php 
 }
 
 
@@ -204,8 +196,7 @@ function mac_facebook_url_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_facebook_url]' value='<?php echo $options['mac_facebook_url']; ?>'>
-	<?php
-
+	<?php 
 }
 
 
@@ -214,8 +205,7 @@ function mac_twitter_url_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_twitter_url]' value='<?php echo $options['mac_twitter_url']; ?>'>
-	<?php
-
+	<?php 
 }
 
 function mac_talent_header_render(  ) { 
@@ -223,8 +213,7 @@ function mac_talent_header_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<input type='text' name='mac_settings[mac_talent_header]' value='<?php echo $options['mac_talent_header']; ?>'>
-	<?php
-
+	<?php 
 }
 
 
@@ -247,17 +236,14 @@ function mac_and_cruise_options_page(  ) {
 	<form action='options.php' method='post'>
 		
 		<h2>Mac and Cruise</h2>
-		<?php
-		settings_fields( 'pluginPage' );
+		<?php 		settings_fields( 'pluginPage' );
 		?>
-		<?php
-		do_settings_sections( 'pluginPage' );
+		<?php 		do_settings_sections( 'pluginPage' );
 		submit_button();
 		?>
 		
 	</form>
-	<?php
-
+	<?php 
 }
 
 ?>

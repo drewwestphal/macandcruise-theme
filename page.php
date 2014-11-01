@@ -35,12 +35,12 @@
 								<h1 class="orange-text"><?php the_title(); ?></h1>
 							<?php if ($post->the_content) {?>
 								<p><?php the_content(); ?></p>
-							<? } else { ?>
+							<?php  } else { ?>
 								<p><?php the_excerpt(); ?></p>
-							<? }; ?>	
+							<?php  }; ?>	
 							</article>
-					<? }; ?>	
-				<? }; ?>	
+					<?php  }; ?>	
+				<?php  }; ?>	
 			</div>
 		</div>
 	</section>
@@ -62,12 +62,12 @@
 								<h1 class="orange-text"><?php the_title(); ?></h1>
 							<?php if ($post->the_content) {?>
 								<p><?php the_content(); ?></p>
-							<? } else { ?>
+							<?php  } else { ?>
 								<p><?php the_excerpt(); ?></p>
-							<? }; ?>	
+							<?php  }; ?>	
 							</article>
-					<? }; ?>	
-				<? }; ?>	
+					<?php  }; ?>	
+				<?php  }; ?>	
 			</div>
 		</div>
 	</section>
