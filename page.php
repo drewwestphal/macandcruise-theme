@@ -31,7 +31,7 @@
 					while ( $faq_query->have_posts() ) {
 						$faq_query->the_post();
 						?>
-							<article>
+							<article id="<?php echo $post->post_name;?>">
 								<h1 class="orange-text"><?php the_title(); ?></h1>
 							<?php if ($post->the_content) {?>
 								<p><?php the_content(); ?></p>
