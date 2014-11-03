@@ -263,7 +263,7 @@
 	</section>
 	
 </section>				
-
+<?php wp_footer(); ?>
 <style type="text/css">
     #overflow{
 	    width:<?php echo $count; ?>00%;

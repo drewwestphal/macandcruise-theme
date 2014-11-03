@@ -91,6 +91,12 @@ if(function_exists("register_field_group"))
 	));
 }
 
+/* show wordpress toolbar for admins (omit if statement to show to all logged in WP users) */
+if (current_user_can('manage_options')) {
+    show_admin_bar(true);
+} else {
+	show_admin_bar(false);
+}
 
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts()
