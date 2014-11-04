@@ -29,6 +29,7 @@ function mac_clean_menu() {
 		$menu = wp_get_nav_menu_object($locations[$menu_name]);
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 		$midpoint =  floor(count($menu_items)/2);
+		$menu_list='';
 		$i=0;
 		foreach ((array) $menu_items as $key => $menu_item) {
 			if (get_option('mac_settings')['mac_booking_enabled'] && $i==$midpoint) { 
