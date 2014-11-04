@@ -281,6 +281,9 @@
 	    #overflow{
 	    	width:100%;
 	    }
+	    .artists-artist{
+		    width:33.3%;
+	    }
 	    #faq-overflow{
 		    width:<?php echo $wide_count; ?>00%;
 	    }
