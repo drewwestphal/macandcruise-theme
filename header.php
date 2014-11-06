@@ -7,16 +7,17 @@
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 <!-- bootstrap css -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
 <!-- jquery & bootstrap js -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<!-- custom css 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/custom.css" />-->
+<!-- custom css -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 
 
-<!--development-->
+<!--development
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.less" />
 <script>
   less = {
@@ -26,8 +27,7 @@
     poll: 1000,
     functions: {},
     dumpLineNumbers: "comments",
-    relativeUrls: false,
-    rootpath: ":<?php bloginfo('template_directory'); ?>/js"
+    relativeUrls: true
   };
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
