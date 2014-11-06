@@ -34,11 +34,29 @@
 	<section id="updates">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
+				<span class="glyphicon glyphicon-arrow-left orange-text news-nav" id="news-left"></span>
 				<section id="news" class="clearfix">
 					<div id="news-cell">
-						<p>This needs to be <span class="orange-text">variablized</span>. Vestibulum id ligula porta felis euismod semper.</p>
+					<?php 
+						$args = array(
+							'post_type' => 'post',
+							'LIMIT'		=> 5
+						);
+						$news_query = new WP_Query( $args );
+						$news_count = $news_query->post_count;
+						if ( $news_query->have_posts() ) {
+							while ( $news_query->have_posts() ) {
+								$news_query->the_post();
+								?>
+								<a class="orange-text"><?php the_title(); ?></a>
+
+					<?php  }; ?>	
+				<?php  }; ?> 
+				<?php wp_reset_postdata(); ?>
 					</div>
+					
 				</section>
+				<span class="glyphicon glyphicon-arrow-right orange-text news-nav" id="news-right"></span>
 				<section id="social">
 					<?php if (get_option('mac_settings')['mac_facebook_url']){ ?>
 					<a class="social-icon" id="facebook" href="<?php echo get_option('mac_settings')['mac_facebook_url']; ?>" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/facebook.png" alt="The Facebook icon."></a>
@@ -265,6 +283,12 @@
 </section>				
 <?php wp_footer(); ?>
 <style type="text/css">
+    #news-cell{
+	    width:<?php echo $news_count; ?>00%;
+    }
+    #news-cell a{
+	    width:<?php echo 100/$news_count; ?>%;
+    }
     #overflow{
 	    width:<?php echo $count; ?>00%;
     }

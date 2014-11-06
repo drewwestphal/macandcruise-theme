@@ -5,6 +5,33 @@ $(document).ready(function(){
 		$('#hero-travel-description_narrow').toggleClass('hidden');
 	});
 	
+	//news
+	var newsCount = $('#news-cell a').length;
+	var newsPosition = 1;
+	var newsMove = function(){
+		$('#news-cell').css('left', -newsPosition+'00%');	
+	};
+	$('.news-nav').click(function(){
+		var newsSpanPosition = $('.news-nav').index(this);
+		if (newsSpanPosition > 0){
+			newsPosition++;
+			if (newsPosition > newsCount) {
+				$('#news-cell').css('left', 0);
+				newsPosition=1;
+			} else {
+				$('#news-cell').css('left', -((newsPosition-1)*100)+'%');
+			}
+		} else {
+			newsPosition--;
+			if (newsPosition < 1) {
+				$('#news-cell').css('left', -((newsCount-1)*100)+'%');
+				newsPosition=newsCount;
+			} else {
+				$('#news-cell').css('left', -((newsPosition-1)*100)+'%');
+			}
+		}
+	});
+		
 	//artist
 	$('.artist-more-info-button').click(function(){
 		$('.artist-more-info-button span').toggleClass('rotate');
