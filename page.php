@@ -41,6 +41,7 @@
 							</article>
 					<?php  }; ?>	
 				<?php  }; ?>	
+				<?php wp_footer(); ?>
 			</div>
 		</div>
 	</section>
@@ -67,7 +68,8 @@
 							<?php  }; ?>	
 							</article>
 					<?php  }; ?>	
-				<?php  }; ?>	
+				<?php  }; ?>
+				<?php wp_footer(); ?>	
 			</div>
 		</div>
 	</section>
