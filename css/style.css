@@ -199,6 +199,14 @@ header,
   border-radius: 0px;
   text-transform: uppercase;
 }
+.admin-bar .navbar {
+  margin-top: 46px;
+}
+@media screen and (min-width: 768px) {
+  .admin-bar .navbar {
+    margin-top: 32px;
+  }
+}
 .navbar-default {
   border: none;
   background-color: transparent;

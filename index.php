@@ -315,6 +315,9 @@
     .faq-item-container{
 	    width:<?php echo 100/$faq_count; ?>%;
     }
+    #wpadminbar{
+	    position: fixed !important;
+    }
     @media screen and (min-width:768px){ 
 	    #overflow{
 	    	width:100%;
