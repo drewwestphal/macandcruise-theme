@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <section id="content" role="main">
+<!--hero-->
 	<section id="hero">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -31,6 +32,7 @@
 			</div>
 		</div>
 	</section>
+<!--updates-->	
 	<section id="updates">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -48,8 +50,7 @@
 							while ( $news_query->have_posts() ) {
 								$news_query->the_post();
 								?>
-								<a class="orange-text"><?php the_title(); ?></a>
-
+								<a href="<?php echo get_permalink(); ?>" class="orange-text"><?php the_title(); ?></a>
 					<?php  }; ?>	
 				<?php  }; ?> 
 				<?php wp_reset_postdata(); ?>
@@ -68,6 +69,7 @@
 			</div>
 		</div>
 	</section>
+<!--artists-->	
 	<section id="artists">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -140,7 +142,7 @@
 			</div>
 		</div>
 	</section>
-	
+<!--about-->	
 	<section id="about">
 				<?php 
 					$args = array(
@@ -173,6 +175,7 @@
 					$count = $artist_query->post_count;
 				?>
 	</section>
+<!--contact-->	
 	<section id="contact">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -193,6 +196,7 @@
 			</div>
 		</div>
 	</section>
+<!--faq-->	
 	<div class="faq container">
 	<div class="faq col-xs-12 col-md-12">
 	<section id="faq">
@@ -267,6 +271,7 @@
 	</section>
 			</div>
 			</div>
+<!--sponsors-->			
 	<section id="sponsors">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
