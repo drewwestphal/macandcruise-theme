@@ -441,6 +441,19 @@ UPDATES
 	background:@darkblue;
 	padding-top: 30px;
 	padding-bottom: 20px;
+	position: relative;
+	span{
+		position: absolute;
+		top:50%;
+		margin-top: -7px;
+		z-index: 900;
+	}
+	.glyphicon-arrow-right{
+		right:0;
+		@media screen and (min-width:768px){
+			right:215px;	
+		}
+	}
 }
 
 #news{
@@ -449,8 +462,9 @@ UPDATES
 	font-weight:700;
 	font-size: 14px;
 	line-height: 1.5em;
-	padding: 0 15px;
 	margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;
 	@media screen and (min-width:768px){
 		width:70%;
 		float:left;
@@ -458,9 +472,16 @@ UPDATES
 	}
 	#news-cell{
 		height:50px;
-		p{
-			display: inline-block;
+		margin: 0 30px;
+		position: relative;
+		transition: left .27s;
+		-moz-transition: left .27s;
+		-webkit-transition: left .27s;
+		a{
+			height:100%;
+			float:left;
 			vertical-align: middle;
+			text-decoration: underline;
 		}
 	}
 	#news-cell:before {
