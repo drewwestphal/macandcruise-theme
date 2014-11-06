@@ -576,6 +576,9 @@ UPDATES
   height: 50px;
   margin: 0 30px;
   position: relative;
+  transition: left .27s;
+  -moz-transition: left .27s;
+  -webkit-transition: left .27s;
 }
 #news #news-cell a {
   height: 100%;
