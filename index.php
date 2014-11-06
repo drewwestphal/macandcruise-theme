@@ -41,10 +41,10 @@
 				</section>
 				<section id="social">
 					<?php if (get_option('mac_settings')['mac_facebook_url']){ ?>
-					<a class="social-icon" id="facebook" href="<?php echo get_option('mac_settings')['mac_facebook_url']; ?>" target="_blank"><img src="/wp-content/themes/MacAndCruise/img/facebook.png" alt="The Facebook icon."></a>
+					<a class="social-icon" id="facebook" href="<?php echo get_option('mac_settings')['mac_facebook_url']; ?>" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/facebook.png" alt="The Facebook icon."></a>
 					<?php  }; ?>
 					<?php if (get_option('mac_settings')['mac_twitter_url']){ ?>
-					<a class="social-icon" id="twitter" href="<?php echo get_option('mac_settings')['mac_twitter_url']; ?>" target="_blank"><img src="/wp-content/themes/MacAndCruise/img/twitter.png" alt="The Twitter icon."></a>
+					<a class="social-icon" id="twitter" href="<?php echo get_option('mac_settings')['mac_twitter_url']; ?>" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.png" alt="The Twitter icon."></a>
 					<?php  }; ?>
 				</section>
 			</div>
@@ -53,7 +53,7 @@
 	<section id="artists">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
-				<img src="/wp-content/themes/MacAndCruise/img/macaroni_anchor.png" alt="A macaroni anchor." id="artists-macaroni-anchor">
+				<img src="<?php bloginfo('template_directory'); ?>/img/macaroni_anchor.png" alt="A macaroni anchor." id="artists-macaroni-anchor">
 			<?php if (get_option('mac_settings')['mac_talent_header']){ ?>
 				<h1 id="artists-header" class="orange-text"><?php echo get_option('mac_settings')['mac_talent_header']; ?></h1>
 			<?php  }; ?>
@@ -150,7 +150,7 @@
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1>Contact Us</h1>
-				<form name="form" action="/wp-content/themes/MacAndCruise/contact.php" method="post" id="contact-form" novalidate class="clearfix">
+				<form name="form" action="<?php bloginfo('template_directory'); ?>/contact.php" method="post" id="contact-form" novalidate class="clearfix">
 					<div class="contact-input" id="contact-input-email">
 						<input name="email" type="email" id="email" placeholder="Your email address">
 					</div>
@@ -297,5 +297,5 @@
 
 </style>
 
-<script src="/wp-content/themes/MacAndCruise/js/js_behavior.js"></script>
-<script src="/wp-content/themes/MacAndCruise/js/js_contact.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/js_contact.js"></script>

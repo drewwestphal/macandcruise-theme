@@ -11,13 +11,13 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <!-- custom css 
-<link rel="stylesheet" type="text/css" href="/wp-content/themes/MacAndCruise/css/custom.css" />-->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/custom.css" />-->
 <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 
 
 <!--development-->
-<link rel="stylesheet/less" type="text/css" href="/wp-content/themes/MacAndCruise/style.less" />
+<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.less" />
 <script>
   less = {
     env: "development",
@@ -27,7 +27,7 @@
     functions: {},
     dumpLineNumbers: "comments",
     relativeUrls: false,
-    rootpath: ":em.local/wp-content/themes/MacAndCruise/js"
+    rootpath: ":<?php bloginfo('template_directory'); ?>/js"
   };
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
