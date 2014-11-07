@@ -21,11 +21,27 @@
 	<section class="mac-page" id="page-faq">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
-				<h1 class="orange-text">FAQ</h1>
-			<?php 
-				$args = array(
+				<h1 class="orange-text"><?php the_title(); ?></h1>
+			    <?php if (have_posts()) : while (have_posts()) : the_post();?>
+		            <div class="mac-page-intro"><?php the_content(); ?></div>
+			    <?php endwhile; endif; 
+			    $args = array(
 					'post_type' => 'faq'
 				);
+				?>
+			    <section class="mac-page-toc">
+				    <? $faq_query = new WP_Query( $args );
+						if ( $faq_query->have_posts() ) {
+							while ( $faq_query->have_posts() ) {
+								$faq_query->the_post();
+								?>
+									<a href="#<?php echo $post->post_name;?>">
+										<?php the_title(); ?>
+									</a><br>
+						<?php  }; ?>	
+					<?php  }; ?>	
+			    </section>
+			<?php 
 				$faq_query = new WP_Query( $args );
 				if ( $faq_query->have_posts() ) {
 					while ( $faq_query->have_posts() ) {
@@ -41,6 +57,7 @@
 							</article>
 					<?php  }; ?>	
 				<?php  }; ?>	
+				<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
 				<?php wp_footer(); ?>
 			</div>
 		</div>
@@ -50,6 +67,9 @@
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1 class="orange-text">News</h1>
+			    <?php if (have_posts()) : while (have_posts()) : the_post();?>
+		            <p class="mac-page-intro"><?php the_content(); ?></p>
+			    <?php endwhile; endif; ?>
 			<?php 
 				$args = array(
 					'post_type' => 'post'

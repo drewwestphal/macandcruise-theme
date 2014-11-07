@@ -320,10 +320,19 @@ header,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #d6d6d6;
   background-color: transparent;
+  transition: color .27s;
+  -moz-transition: color .27s;
+  -webkit-transition: color .27s;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #faa919;
   height: 3px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #faa919;
+  transition: color .27s;
+  -moz-transition: color .27s;
+  -webkit-transition: color .27s;
 }
 /*
 	
@@ -1146,6 +1155,31 @@ pages
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+}
+.mac-page .mac-page-intro p {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  padding-top: 20px;
+}
+.mac-page .mac-page-toc {
+  margin: 20px 0;
+}
+.mac-page .mac-page-toc a {
+  color: #faa919;
+  font-size: 20px;
+  line-height: 2em;
+  border-bottom: 1px solid #faa919;
+  transform: color .27s;
+  -moz-transform: color .27s;
+  -webkit-transform: color .27s;
+}
+.mac-page .mac-page-toc a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid #ffffff;
+  transform: color .27s;
+  -moz-transform: color .27s;
+  -webkit-transform: color .27s;
 }
 .mac-page article {
   padding: 20px 0;
