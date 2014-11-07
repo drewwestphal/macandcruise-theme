@@ -13,7 +13,7 @@
 				<h4 id="hero-travel-description_wide"><?php echo get_option('mac_settings')['mac_travel_description'];?></h4>
 				<?php  }; ?>
 				<?php 
-					if (get_option('mac_settings')['mac_booking_enabled']) { 
+					if (isset(get_option('mac_settings')['mac_booking_enabled'])) { 
 						//book now button?
 					} else { ?>
 						<p class="orange-text"><?php echo get_option('mac_settings')['mac_mailing_list_cta']; ?></p>
