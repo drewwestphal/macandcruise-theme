@@ -1190,6 +1190,12 @@ pages
 .mac-page article {
   padding: 20px 0;
 }
+.mac-page .faq-article {
+  padding: 0 0;
+}
+.mac-page .faq-article-maximize {
+  padding: 0 0 33px 0;
+}
 .mac-page article h1 {
   font-size: 20px;
   text-align: left;

@@ -35,28 +35,37 @@
 							while ( $faq_query->have_posts() ) {
 								$faq_query->the_post();
 								?>
-									<a href="#<?php echo $post->post_name;?>">
-										<?php the_title(); ?>
-									</a><br>
+                            <article class="faq-article" id="<?php echo $post->post_name;?>">
+                                    <a class="faq-show-hide" href="#">
+                                        <?php the_title(); ?>
+                                    </a><br>
+                            <div style="display:none" class="faq-content">
+                            <?php if ($post->the_content) {?>
+                                <?php the_content(); ?>
+                            <?php  } else { ?>
+                                <?php the_excerpt(); ?>
+                            <?php  }; ?>    
+                            </div>
+                            </article>
 						<?php  }; ?>	
 					<?php  }; ?>	
+			    <script type="text/javascript">
+			        $('.faq-show-hide').click(function(){
+                       var mom = $(this).parent();
+                       var bro = $(this).siblings('.faq-content');
+			           // set this now... timing will affect result later
+			           var brovis = !bro.is(':visible');
+                       bro.slideToggle({
+                           duration:200,
+                           easing:'linear'
+                       });
+                       mom.toggleClass('faq-article-maximize');
+                       history.pushState(null, null, '#'+mom.attr('id'));
+                       return false;
+			        });
+                    window.location.hash.length>1 && $('#'+location.hash.substr(1)+' a.faq-show-hide').click();
+			    </script>
 			    </section>
-			<?php 
-				$faq_query = new WP_Query( $args );
-				if ( $faq_query->have_posts() ) {
-					while ( $faq_query->have_posts() ) {
-						$faq_query->the_post();
-						?>
-							<article id="<?php echo $post->post_name;?>">
-								<h1 class="orange-text"><?php the_title(); ?></h1>
-							<?php if ($post->the_content) {?>
-								<p><?php the_content(); ?></p>
-							<?php  } else { ?>
-								<p><?php the_excerpt(); ?></p>
-							<?php  }; ?>	
-							</article>
-					<?php  }; ?>	
-				<?php  }; ?>	
 				<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
 				<?php wp_footer(); ?>
 			</div>
