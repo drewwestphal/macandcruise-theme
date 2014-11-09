@@ -31,25 +31,30 @@
 				);
 				?>
 			    <section class="mac-page-toc">
-				    <?php $faq_query = new WP_Query( $args );
-						if ( $faq_query->have_posts() ) {
-							while ( $faq_query->have_posts() ) {
-								$faq_query->the_post();
-								?>
-                            <article class="faq-article" id="<?php echo $post->post_name;?>">
-                                    <a class="faq-show-hide" href="#">
-                                        <?php the_title(); ?>
-                                    </a><br>
-                            <div style="display:none" class="faq-content">
-                            <?php if ($post->post_content) {?>
-                                <?php the_content(); ?>
-                            <?php  } else { ?>
-                                <?php the_excerpt(); ?>
-                            <?php  }; ?>    
-                            </div>
-                            </article>
-						<?php  }; ?>	
-					<?php  }; ?>	
+                <?php 
+                    $faq_query = new WP_Query( array(
+                        'post_type' => 'faq',
+                        'posts_per_page' => -1
+                    ));
+                    $byHeader = array();
+                    while($faq_query -> have_posts()) {
+                        $faq_query -> the_post();
+                       
+                        $byHeader[get_field('faq_section_header', $post -> ID)][] = sprintf('
+                        <article class="faq-article" id="%s">
+                        <a class="faq-show-hide" href="#">%s</a><br/>
+                        <div style="display:none" class="faq-content">%s</div>
+                        </article>
+                        ', $post -> post_name, $post -> post_title, //
+                        $post -> post_content ? apply_filters( 'the_content', $post -> post_content) : $post -> post_excerpt);
+                    }
+                    foreach($byHeader as $header => $posts) {
+                        if(count($posts)) {
+                            printf('<h1 class="orange-text faq-section-header">%s</h1>', $header);
+                            array_map('printf', $posts);
+                        }
+                    }
+                 ?> 
 			    <script type="text/javascript">
 			        function toggleFaq(item,animate){
                        var mom = item.parent();

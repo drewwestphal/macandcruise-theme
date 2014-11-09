@@ -70,6 +70,22 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'layout' => 'vertical',
 			),
+            array (
+                'key' => 'field_545fbfa49ce6f',
+                'label' => 'FAQ Section Header',
+                'name' => 'faq_section_header',
+                'type' => 'select',
+                'required' => 1,
+                'choices' => array (
+                    'What the heck?' => 'What the heck?',
+                    'Booking Questions' => 'Booking Questions',
+                    'I\'m Booked Now What?' => 'I\'m Booked Now What?',
+                ),
+                'default_value' => 'What the heck?',
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
+			
 		),
 		'location' => array (
 			array (

@@ -1094,6 +1094,7 @@ FAQ
 #faq #faq-view-all:hover {
   cursor: pointer;
 }
+
 /*
 	
 	
@@ -1161,6 +1162,10 @@ pages
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+}
+.mac-page h1.faq-section-header {
+  text-align: left;
+  margin:30px 0 15px;
 }
 .mac-page .mac-page-intro p {
   font-family: 'Lato', sans-serif;
