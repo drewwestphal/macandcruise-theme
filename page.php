@@ -26,7 +26,8 @@
 		            <div class="mac-page-intro"><?php the_content(); ?></div>
 			    <?php endwhile; endif; 
 			    $args = array(
-					'post_type' => 'faq'
+					'post_type' => 'faq',
+					'posts_per_page' => -1 
 				);
 				?>
 			    <section class="mac-page-toc">
@@ -50,20 +51,21 @@
 						<?php  }; ?>	
 					<?php  }; ?>	
 			    <script type="text/javascript">
-			        $('.faq-show-hide').click(function(){
-                       var mom = $(this).parent();
-                       var bro = $(this).siblings('.faq-content');
-			           // set this now... timing will affect result later
-			           var brovis = !bro.is(':visible');
-                       bro.slideToggle({
-                           duration:200,
-                           easing:'linear'
-                       });
+			        function toggleFaq(item,animate){
+                       var mom = item.parent();
+                       var bro = item.siblings('.faq-content');
+                       // set this now... timing will affect result later
+                       var brovis = !bro.is(':visible');
+                       bro.slideToggle(animate?200:0);
                        mom.toggleClass('faq-article-maximize');
                        history.pushState(null, null, '#'+mom.attr('id'));
+			        }
+			    
+			        $('.faq-show-hide').click(function(){
+                        toggleFaq($(this),true)
                        return false;
 			        });
-                    window.location.hash.length>1 && $('#'+location.hash.substr(1)+' a.faq-show-hide').click();
+                    window.location.hash.length>1 && toggleFaq($('#'+location.hash.substr(1)+' a.faq-show-hide'), false);
 			    </script>
 			    </section>
 				<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
