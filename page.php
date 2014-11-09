@@ -48,7 +48,10 @@
                         ', $post -> post_name, $post -> post_title, //
                         $post -> post_content ? apply_filters( 'the_content', $post -> post_content) : $post -> post_excerpt);
                     }
-                    foreach($byHeader as $header => $posts) {
+                    
+                    $allHeadersOrdered = array_unique(array_merge($faq_section_headers_ordered, array_keys($byHeader)));
+                    foreach($allHeadersOrdered as $header) {
+                        $posts = isset($byHeader[$header]) ? $byHeader[$header] : array();
                         if(count($posts)) {
                             printf('<h1 class="orange-text faq-section-header">%s</h1>', $header);
                             array_map('printf', $posts);

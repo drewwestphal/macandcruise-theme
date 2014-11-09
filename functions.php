@@ -52,6 +52,12 @@ function mac_clean_menu() {
 	}
 	echo $menu_list;
 }
+
+$faq_section_headers_ordered = array(
+    "What the heck?",
+    "Booking Questions",
+    "I'm Booked Now What?",
+);
 add_action( 'init', 'mac_register_theme_menu' );
 if(function_exists("register_field_group"))
 {
@@ -76,11 +82,7 @@ if(function_exists("register_field_group"))
                 'name' => 'faq_section_header',
                 'type' => 'select',
                 'required' => 1,
-                'choices' => array (
-                    'What the heck?' => 'What the heck?',
-                    'Booking Questions' => 'Booking Questions',
-                    'I\'m Booked Now What?' => 'I\'m Booked Now What?',
-                ),
+                'choices' => array_combine($faq_section_headers_ordered,$faq_section_headers_ordered),
                 'default_value' => 'What the heck?',
                 'allow_null' => 0,
                 'multiple' => 0,
