@@ -54,9 +54,9 @@ function mac_clean_menu() {
 }
 
 $faq_section_headers_ordered = array(
-    "What the heck?",
+    'What is a "Macaroni and Cruise?"',
     "Booking Questions",
-    "I'm Booked Now What?",
+    "I'm Booked, So Now What?",
 );
 add_action( 'init', 'mac_register_theme_menu' );
 if(function_exists("register_field_group"))
