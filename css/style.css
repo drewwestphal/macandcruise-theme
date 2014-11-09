@@ -730,7 +730,10 @@ ARTISTS
 @media screen and (min-width: 768px) {
   .artists-artist {
     width: 32%;
-    min-height: 350px;
+    padding-bottom:40px;
+  }
+  .artists-artist:nth-child(3n+1) {
+    clear:left;
   }
 }
 .artists-featured-image img {
