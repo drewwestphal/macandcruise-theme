@@ -338,5 +338,3 @@
 
 </style>
 
-<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/js_contact.js"></script>

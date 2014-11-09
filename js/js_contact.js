@@ -44,7 +44,7 @@ $('#contact-form').submit(function(){
 	
 	
 	if (name && email && comments) {
-		$.post("contact.php", $("#contact-form").serialize());
+		$.post(js_contact_data.contact_post_url, $("#contact-form").serialize(),function(data){console.log(data);});
 		$('#name, #email').removeClass('orange-border');
 		$('#contact button').before('<div id="contact-received">Thank you! Your message has been sent.</div>');
 	}
