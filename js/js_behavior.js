@@ -176,19 +176,33 @@ $(document).ready(function(){
 	$(function() {
 	  $('a[href*=#]:not([href=#])').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	      var target = $(this.hash);
+          var target_hash = this.hash;
+          var target = $(this.hash);
 	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	      if (target.length) {
 	        $('html,body').animate({
 	          scrollTop: target.offset().top-$('.navbar-nav').height()-$('#wpadminbar').height()
 	        }, 500);
+	        // set hash when the time is right
+	        // http://stackoverflow.com/questions/3870057/how-can-i-update-window-location-hash-without-jumping-the-document
+	        // no workaround for older browsers.
+	        history.pushState(null, null, this.hash);
+	        
 	        return false;
 	      }
 	    }
 	  });
 	});
-
+	scrollready = document.body.scrollTop; 
 });
+$(window).load(function(){
+    // scroll at doc ready is 0 if we have never been here before even though 
+    // there is a hash. hash height gets computed at window load
+    if(window.location.hash.length>1 && document.body.scrollTop!==scrollready){
+        window.scrollTo(0,document.body.scrollTop-$('.navbar-nav').height()-$('#wpadminbar').height());
+    }
+});
+
 
 $(window).resize(function(){
 	//artist
