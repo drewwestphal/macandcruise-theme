@@ -110,6 +110,17 @@
 											<div class="artists-description nope">
 												<?php the_excerpt(); ?>
 											</div>
+											<div style="padding-top:8px" class="artists-social-icons">
+											<?php 
+											if($tw=get_field('artist_twitter')){
+                                               printf('<a href="%s" target=_blank><img height="30" src="%s" alt="twitter icon"/></a>', $tw, get_template_directory_uri().'/img/paul-twitter.png'); 
+                                            }
+                                            if($fb=get_field('artist_facebook')){
+                                               printf('<a href="%s" target=_blank><img height="35" src="%s" alt="facebook icon"/></a>', $fb, get_template_directory_uri().'/img/paul-facebook.png'); 
+                                            }
+                                            
+											?>
+											</div>
 										</section>
 										<?php  }; ?>
 									</div>
