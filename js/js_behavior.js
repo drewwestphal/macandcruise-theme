@@ -130,7 +130,7 @@ $(document).ready(function(){
 	});
 	//faq wide
     var faqWideCount = $('#faq-overflow .faq-group').length;
-	faqWidePosition = 0;
+	faqWidePosition = 1;
 	$('.faq-carousel a').click(function(event){
 	    faqWidePosition = $(this).index();
 	    var faqAdjusted = -(faqWidePosition-1)*100;
