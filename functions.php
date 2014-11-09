@@ -53,8 +53,9 @@ function mac_clean_menu() {
 	echo $menu_list;
 }
 
+// sorry double quotes will break acf
 $faq_section_headers_ordered = array(
-    'What is a "Macaroni and Cruise?"',
+    "What is a 'Macaroni and Cruise?'",
     "Booking Questions",
     "I'm Booked, So Now What?",
 );
