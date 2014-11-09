@@ -251,6 +251,10 @@
 									<?php if ($post->post_excerpt) {?>
 									<div class="faq-item-answer">
 											<?php the_excerpt(); ?>
+											<?php 
+											$faqpage = get_page_by_title('FAQ');
+											printf('<a class="faq-item-view-rest" href="%s" target=_blank>View the rest of this answer</a>',get_permalink($faqpage->ID).'#'.$post->post_name);
+                                            ?>
 									</div>
 									<?php  } else { ?>
 									<div class="faq-item-answer">

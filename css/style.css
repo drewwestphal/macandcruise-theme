@@ -1080,15 +1080,16 @@ FAQ
     left: 0;
   }
 }
-#faq #faq-view-all {
+#faq #faq-view-all, #faq .faq-item-view-rest {
   color: #939393;
   text-transform: uppercase;
   text-decoration: underline;
   font-size: 18px;
   font-weight: 700;
+  padding:0;
 }
 @media screen and (min-width: 768px) {
-  #faq #faq-view-all {
+  #faq #faq-view-all, #faq .faq-item-view-rest {
     font-size: 14px;
   }
 }
