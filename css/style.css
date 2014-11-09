@@ -895,6 +895,9 @@ ABOUT
     float: right;
   }
 }
+.about-info a {
+    color:#f1a800;
+}
 /*
 	
 	
