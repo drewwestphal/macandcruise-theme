@@ -40,7 +40,7 @@
                                         <?php the_title(); ?>
                                     </a><br>
                             <div style="display:none" class="faq-content">
-                            <?php if ($post->the_content) {?>
+                            <?php if ($post->post_content) {?>
                                 <?php the_content(); ?>
                             <?php  } else { ?>
                                 <?php the_excerpt(); ?>
