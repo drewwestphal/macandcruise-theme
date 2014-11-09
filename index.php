@@ -118,16 +118,19 @@
 							}
 
 							wp_reset_postdata();
-						?>
-							<div class="artists-artist" id="item-more">
-									<div class="artists-featured-image">
-										<img src="/wp-content/themes/MacAndCruise/img/artist_anchor.png" alt="A gray circle with a negative space macaroni anchor.">
-									</div>
-									<div class="artists-name">
-										<p>&hellip;and many more!</p>
-									</div>
-									</section>
-								</div>
+                            if($count%3!==0){
+                                ?>
+                            <div class="artists-artist" id="item-more">
+                                    <div class="artists-featured-image">
+                                        <img src="/wp-content/themes/MacAndCruise/img/artist_anchor.png" alt="A gray circle with a negative space macaroni anchor.">
+                                    </div>
+                                    <div class="artists-name">
+                                        <p>&hellip;and many more!</p>
+                                    </div>
+                                    </section>
+                                </div>
+                                
+                        <?php } ?>
 						</div>
 					</div>
 				</div>
