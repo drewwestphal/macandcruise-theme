@@ -805,6 +805,7 @@ ARTISTS
 }
 .artists-description {
   z-index: 900;
+  text-align:justify;
 }
 @media screen and (max-width: 767px) {
   .artists-description {
