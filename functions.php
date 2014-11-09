@@ -32,7 +32,7 @@ function mac_clean_menu() {
 		$menu_list='';
 		$i=0;
 		foreach ((array) $menu_items as $key => $menu_item) {
-			if (get_option('mac_settings')['mac_booking_enabled'] && $i==$midpoint) { 
+			if (@get_option('mac_settings')['mac_booking_enabled'] && $i==$midpoint) { 
 				$menu_list .= '<li class="hidden-xs" aria-hidden="true"><a href="'. get_option('mac_settings')['mac_booking_url'] .'" class="orange-text"><span class="glyphicon glyphicon-calendar"></span>Book Now</a></li>';
 			}
 			$title = $menu_item->title;
