@@ -6,7 +6,7 @@
 <?php //get_template_part( 'entry' ); ?>
 	<article>
 		<h1 class="orange-text"><?php the_title(); ?></h1>
-	<?php if ($post->the_content) {?>
+	<?php if ($post->post_content) {?>
 		<p><?php the_content(); ?></p>
 	<?php  } else { ?>
 		<p><?php the_excerpt(); ?></p>
