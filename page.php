@@ -45,8 +45,8 @@
                         <a class="faq-show-hide" href="#">%s</a><br/>
                         <div style="display:none" class="faq-content">%s</div>
                         </article>
-                        ', $post -> post_name, $post -> post_title, //
-                        $post -> post_content ? apply_filters( 'the_content', $post -> post_content) : $post -> post_excerpt);
+                        ', $post -> post_name, apply_filters( 'the_title', $post -> post_title), //
+                        $post -> post_content ? apply_filters( 'the_content', $post -> post_content) : apply_filters( 'the_excerpt', $post -> post_excerpt));
                     }
                     
                     $allHeadersOrdered = array_unique(array_merge($faq_section_headers_ordered, array_keys($byHeader)));
@@ -100,7 +100,7 @@
 						?>
 							<article>
 								<h1 class="orange-text"><?php the_title(); ?></h1>
-							<?php if ($post->the_content) {?>
+							<?php if ($post->post_content) {?>
 								<p><?php the_content(); ?></p>
 							<?php  } else { ?>
 								<p><?php the_excerpt(); ?></p>
