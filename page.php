@@ -66,11 +66,11 @@
                        var brovis = !bro.is(':visible');
                        bro.slideToggle(animate?200:0);
                        mom.toggleClass('faq-article-maximize');
+                       return mom.attr('id');
 			        }
 			    
 			        $('.faq-show-hide').click(function(){
-                        toggleFaq($(this),true)
-                        history.pushState(null, null, '#'+mom.attr('id'));
+                        history.pushState(null, null, '#'+toggleFaq($(this),true));
                        return false;
 			        });
                     window.location.hash.length>1 && toggleFaq($('#'+location.hash.substr(1)+' a.faq-show-hide'), false);
