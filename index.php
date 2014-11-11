@@ -264,7 +264,7 @@
                         $markup .= "</div>";
                         echo $markup;
 						wp_reset_postdata();
-						?></div>
+						?>
 					</div>
 					
 				<?php 				}
