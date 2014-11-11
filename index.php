@@ -113,10 +113,13 @@
 											<div style="padding-top:8px" class="artists-social-icons">
 											<?php 
 											if($tw=get_field('artist_twitter')){
-                                               printf('<a href="%s" target=_blank><img height="30" src="%s" alt="twitter icon"/></a>', $tw, get_template_directory_uri().'/img/paul-twitter.png'); 
+                                               printf('<a href="%s" target=_blank><img src="%s" alt="twitter icon"/></a>', $tw, get_template_directory_uri().'/img/paul-twitter.png'); 
                                             }
                                             if($fb=get_field('artist_facebook')){
-                                               printf('<a href="%s" target=_blank><img height="35" src="%s" alt="facebook icon"/></a>', $fb, get_template_directory_uri().'/img/paul-facebook.png'); 
+                                               printf('<a href="%s" target=_blank><img src="%s" alt="facebook icon"/></a>', $fb, get_template_directory_uri().'/img/paul-facebook.png'); 
+                                            }
+                                            if($yt=get_field('artist_youtube')){
+                                               printf('<a href="%s" target=_blank><img src="%s" alt="youtube icon"/></a>', $yt, get_template_directory_uri().'/img/paul-youtube.png'); 
                                             }
                                             
 											?>

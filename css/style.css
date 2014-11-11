@@ -795,6 +795,10 @@ ARTISTS
   transition: transform .27s;
   -moz-transition: transform .27s;
 }
+.artist-more-info img {
+    padding:5px;
+    height:35px;
+}
 @media screen and (min-width: 768px) {
   .artist-more-info-button {
     display: none;
