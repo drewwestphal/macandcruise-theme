@@ -1037,6 +1037,7 @@ FAQ
 #faq h1,
 #faq h2 {
   color: #6280b5;
+  text-decoration: underline;
 }
 #faq a {
   font-size: 24px;
