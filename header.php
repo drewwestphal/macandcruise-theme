@@ -5,18 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title( ' | ', true, 'right' ); ?></title>
 
-<!-- bootstrap css -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-<!-- jquery & bootstrap js -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<!-- custom css -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
-
-<link href='//fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-
 
 <!--development
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.less" />
@@ -41,6 +29,7 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
 	<div class="container-fluid" id="header-container">
+	    <?php if ( !current_theme_supports( 'headerless_operation' ) ) {?>
 		<div class="row">
 			<header id="header" role="banner" class="">
 				<nav class="navbar navbar-default" role="navigation">
@@ -70,4 +59,5 @@
 				</nav>
 			</header>
 		</div>
+		<?php } ?>
 	</div>
