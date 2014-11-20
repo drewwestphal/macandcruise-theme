@@ -38,8 +38,8 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
+    <?php if ( !current_theme_supports( 'headerless_operation' ) ) {?>
 	<div class="container-fluid" id="header-container">
-	    <?php if ( !current_theme_supports( 'headerless_operation' ) ) {?>
 		<div class="row">
 			<header id="header" role="banner" class="">
 				<nav class="navbar navbar-default" role="navigation">
@@ -69,5 +69,5 @@
 				</nav>
 			</header>
 		</div>
-		<?php } ?>
 	</div>
+    <?php } ?>

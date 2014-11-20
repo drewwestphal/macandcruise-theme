@@ -101,10 +101,14 @@ function blankslate_load_scripts() {
     $maindeps, 1, 'screen');
 
     // according to this place you don't wanna enqueue shit on the admin side...
+    //http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way/
     if(!is_admin()) {
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), 1, false);
+        
+        // this is also just for the front-end
         wp_enqueue_script('bootstrapjs', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array(), 1, false);
+        
     }
 
     // home directory scripts
