@@ -204,7 +204,7 @@
 	<div class="faq container">
 	<div class="faq col-xs-12 col-md-12">
 	<section id="faq">
-				<h1 onclick="window.location = '/faq'" style="cursor:pointer;">FAQS</h1>
+				<h1 onclick="window.location = 'faq/'" style="cursor:pointer;">FAQS</h1>
 				<?php 
 				$args = array(
 					'post_type' => 'faq',
@@ -269,7 +269,7 @@
 					
 				<?php 				}
 				?>
-				<a id="faq-view-all" href="/faq">View All FAQS</a>
+				<a id="faq-view-all" href="faq/">View All FAQS</a>
 	</section>
 			</div>
 			</div>
