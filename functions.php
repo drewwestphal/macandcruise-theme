@@ -94,6 +94,15 @@ function blankslate_load_scripts() {
     // when the bk engine is running
     if(!current_theme_supports('headerless_operation')) {
         $maindeps[] = 'reset';
+    } else {
+        // load bk styles
+        wp_enqueue_style('bookingcss', //
+        get_template_directory_uri() . '/css/booking.css', //
+        array(
+            'base',
+            'macstyle'
+        ),//
+        1, 'screen');
     }
     
     wp_enqueue_style('macstyle', //
