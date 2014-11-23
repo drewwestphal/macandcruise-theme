@@ -54,7 +54,10 @@
                         $posts = isset($byHeader[$header]) ? $byHeader[$header] : array();
                         if(count($posts)) {
                             printf('<h1 class="orange-text faq-section-header">%s</h1>', $header);
-                            array_map('printf', $posts);
+                            // can't use print or echo as they are not real functions
+                            array_map(function($post) {
+                                file_put_contents('php://output', $post);
+                            }, $posts);
                         }
                     }
                  ?> 
