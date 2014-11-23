@@ -13,15 +13,17 @@
 				<h4 id="hero-travel-description_wide"><?php echo get_option('mac_settings')['mac_travel_description'];?></h4>
 				<?php  }; ?>
 				<?php 
-					if (isset(get_option('mac_settings')['mac_booking_enabled'])) { 
-						//book now button?
-					} else { ?>
-						<p class="orange-text"><?php echo get_option('mac_settings')['mac_mailing_list_cta']; ?></p>
-						<?php if( function_exists( 'mc4wp_form' ) ) {
-						    mc4wp_form();
-						} ?>
-				 <?php  }
-				?>
+				    $stylemodbkon = '';
+					if (isset(get_option('mac_settings')['mac_booking_enabled'])) {
+					    $bkurl = get_option('mac_settings')['mac_booking_url'];
+                        printf('<a href="%s" style="width:250px; margin-top:8px; margin-left:33px" class="btn btn-lg btn-success">Book Now!</a>',$bkurl);
+                        $stylemodbkon = 'padding-top:14px;padding-bottom:0;margin-bottom:-0.7em;'; 
+					} ?>
+					<?php if( function_exists( 'mc4wp_form' ) ) {
+					    printf('<p class="orange-text" style="%s">%s</p>',//
+                         $stylemodbkon,get_option('mac_settings')['mac_mailing_list_cta']);
+					    mc4wp_form();
+					} ?>
 				<section id="hero-more-info">
 					<div id="hero-more-info-button">
 						<h1 class="orange-text">More Info</h1>
