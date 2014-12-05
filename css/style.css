@@ -69,7 +69,7 @@ header,
 #header-container .container-fluid,
 #header-container .navbar-header {
   height: 64px;
-  z-index: 900;
+  z-index: 90;
 }
 .navbar {
   border-radius: 0px;
