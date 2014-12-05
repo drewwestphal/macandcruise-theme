@@ -1164,3 +1164,33 @@ article ul,article li {
 .m-invisible > span {
   color: rgba(0, 0, 0, 0.2) !important;
 }
+/* David edits */
+h1, h2, h3, h4, h5, h6 {
+	margin: 20px 0px 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+h1 {
+	font-size: 36px;
+}
+h2 {
+	font-size: 32px;
+}
+h3 {
+	font-size: 28px;
+}
+h4 {
+	font-size: 24px;
+}
+h5 {
+	font-size: 20px;
+}
+h6 {
+	font-size: 16px;
+}
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}
