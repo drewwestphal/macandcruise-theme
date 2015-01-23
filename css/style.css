@@ -1164,3 +1164,11 @@ article ul,article li {
 .m-invisible > span {
   color: rgba(0, 0, 0, 0.2) !important;
 }
+
+/**
+ *     USER ACCOUNT HOME
+ */
+
+.panel > .list-group .list-group-item {
+    color: rgb(17, 17, 17);
+}
